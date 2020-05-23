@@ -1,25 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import "./App.css";
+import { Layout, Menu, Drawer, Button } from "antd";
+import {MenuFoldOutlined , MenuUnfoldOutlined} from "@ant-design/icons"
+const { Header, Sider, Footer, Content } = Layout;
 function App() {
+  const [visible,setVisible] =useState(true);
+  function onToggle (){
+    setVisible(prev => {
+      console.log(prev)
+      return !prev})
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link hello"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Layout>
+      <Layout>
+      <Header style={{ position: 'fixed', zIndex: 1, width: '100%' , background:"none" }}>
+        <Button onClick={onToggle}>
+          {visible? <MenuFoldOutlined  />: <MenuUnfoldOutlined />}
+        </Button>
+      </Header>
+      </Layout>
+      <Layout >
+      <Drawer
+          title="Basic Drawer"
+          placement="left"
+          closable={true}
+          onClose={onToggle}
+          visible={visible}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+        </Drawer>
+
+        <Content style={{
+              marginTop: "60px",
+              height: "100vh",
+              backgroundColor: "#00009",
+            }} >sldhfjk</Content>
+      </Layout>
+      <Footer style={{backgroundColor:"black"}}> This is the footer</Footer>
+    </Layout>
   );
 }
 
