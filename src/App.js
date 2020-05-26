@@ -10,36 +10,37 @@ function App() {
       console.log(prev)
       return !prev})
   }
-  return (
-    <Layout>
-      <Layout>
-      <Header style={{ position: 'fixed', zIndex: 1, width: '100%' , background:"none" }}>
-        <Button onClick={onToggle}>
-          {visible? <MenuFoldOutlined  />: <MenuUnfoldOutlined />}
-        </Button>
-      </Header>
-      </Layout>
-      <Layout >
-      <Drawer
-          title="Basic Drawer"
-          placement="left"
-          closable={true}
-          onClose={onToggle}
-          visible={visible}
-        >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-        </Drawer>
+  return (<>sdf
+  </>
+    // <Layout>
+    //   <Layout>
+    //   <Header style={{ position: 'fixed', zIndex: 1, width: '100%' , background:"none" }}>
+    //     <Button onClick={onToggle}>
+    //       {visible? <MenuFoldOutlined  />: <MenuUnfoldOutlined />}
+    //     </Button>
+    //   </Header>
+    //   </Layout>
+    //   <Layout >
+    //   <Drawer
+    //       title="Basic Drawer"
+    //       placement="left"
+    //       closable={true}
+    //       onClose={onToggle}
+    //       visible={visible}
+    //     >
+    //       <p>Some contents...</p>
+    //       <p>Some contents...</p>
+    //       <p>Some contents...</p>
+    //     </Drawer>
 
-        <Content style={{
-              marginTop: "60px",
-              height: "100vh",
-              backgroundColor: "#00009",
-            }} >sldhfjk</Content>
-      </Layout>
-      <Footer style={{backgroundColor:"black"}}> This is the footer</Footer>
-    </Layout>
+    //     <Content style={{
+    //           marginTop: "60px",
+    //           height: "100vh",
+    //           backgroundColor: "white",
+    //         }} >sldhfjk</Content>
+    //   </Layout>
+    //   <Footer style={{backgroundColor:"black"}}> This is the footer</Footer>
+    // </Layout>
   );
 }
 
